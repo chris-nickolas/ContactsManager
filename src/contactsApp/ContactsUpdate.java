@@ -102,6 +102,7 @@ public class ContactsUpdate {
         System.out.print(" Name or Number: ");
 
 
+
         Scanner input = new Scanner(System.in);
         String searchedName = input.nextLine();
         Path ContactsPath = Paths.get("src/contactsApp/contacts.txt");
@@ -112,14 +113,18 @@ public class ContactsUpdate {
             List<String> newList = new ArrayList<>(); // creates empty list
             for (String person : Personlist) {
                 if (person.toLowerCase().contains(searchedName)) {
+
                     continue; // skips a searched name
                 }
                 newList.add(person); // adds names
+
             }
             for (String name : newList) {
                 System.out.println(name);
+
             }
             Files.write(ContactsPath, newList);
+
         } catch (IOException e) {
             e.printStackTrace();
         }
