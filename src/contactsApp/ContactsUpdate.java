@@ -11,6 +11,7 @@ import java.util.List;
 import java.util.Scanner;
 
 
+
 public class ContactsUpdate {
     public static List<Contact> Personlist = new ArrayList<>();
 
@@ -100,6 +101,7 @@ public class ContactsUpdate {
         System.out.println("4. Delete contacts from the list by name or phone number. ");
         System.out.print(" Name or Number: ");
 
+
         Scanner input = new Scanner(System.in);
         String searchedName = input.nextLine();
         Path ContactsPath = Paths.get("src/contactsApp/contacts.txt");
@@ -116,13 +118,11 @@ public class ContactsUpdate {
             }
             for (String name : newList) {
                 System.out.println(name);
-
             }
             Files.write(ContactsPath, newList);
         } catch (IOException e) {
             e.printStackTrace();
         }
-        System.out.println(searchedName + " Has been deleted from contacts");
     }
 
     // exits program
