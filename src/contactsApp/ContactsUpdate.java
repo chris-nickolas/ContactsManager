@@ -45,7 +45,7 @@ public class ContactsUpdate {
         System.out.print("  Phone Number : ");
         String phoneNumber = input.nextLine();
 
-        Files.write(Paths.get("contactsApp/contacts.txt"),
+        Files.write(Paths.get("src/contactsApp/contacts.txt"),
                 Arrays.asList(firstName + " " + lastName + " | " + phoneNumber),
                 StandardOpenOption.APPEND
         );
@@ -56,7 +56,7 @@ public class ContactsUpdate {
     public static void printList() {
         System.out.println("Name | Phone number ");
         System.out.println("-----------------------------");
-        Path ContactsPath = Paths.get("contactsApp/contacts.txt");
+        Path ContactsPath = Paths.get("src/contactsApp/contacts.txt");
         List<String> Personlist = null;
         try {
             Personlist = Files.readAllLines(ContactsPath);
@@ -77,7 +77,7 @@ public class ContactsUpdate {
         Scanner input = new Scanner(System.in);
 
         String searchedLastName = input.nextLine();
-        Path ContactsPath = Paths.get("contactsApp/contacts.txt");
+        Path ContactsPath = Paths.get("src/contactsApp/contacts.txt");
         List<String> Personlist;
 
         try {
@@ -102,7 +102,7 @@ public class ContactsUpdate {
 
         Scanner input = new Scanner(System.in);
         String searchedName = input.nextLine();
-        Path ContactsPath = Paths.get("contactsApp/contacts.txt");
+        Path ContactsPath = Paths.get("src/contactsApp/contacts.txt");
         List<String> Personlist;
 
         try {
@@ -116,11 +116,13 @@ public class ContactsUpdate {
             }
             for (String name : newList) {
                 System.out.println(name);
+
             }
             Files.write(ContactsPath, newList);
         } catch (IOException e) {
             e.printStackTrace();
         }
+        System.out.println(searchedName + " Has been deleted from contacts");
     }
 
     // exits program
