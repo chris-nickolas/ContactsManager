@@ -11,7 +11,6 @@ public class Contact {
         this.lastName = lastName;
         this.phoneNumber = phoneNumber;
     }
-
     public String toString() {
         return this.firstName + " " + this.lastName + "Phone number: " + this.phoneNumber;
     }

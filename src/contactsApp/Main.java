@@ -1,5 +1,4 @@
 package contactsApp;
-
 import java.io.IOException;
 
 public class Main {
